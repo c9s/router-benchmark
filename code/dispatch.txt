@@ -1,0 +1,20 @@
+n=10000
+Runing symfony/routing - . 6664.4093423989/s
+Runing phux extension - . 16501.898328291/s
+
+                   Rate   Mem phux extension symfony/routing
+ phux extension   16K/s    5M             --            -40%
+symfony/routing    6K/s  786K           247%              --
+
+
+================================== Bar Chart ==================================
+
+   phux extension   16K/s | ████████████████████████████████████████████████████████████  |
+  symfony/routing    6K/s | ████████████████████████                                      |
+
+
+============================== System Information ==============================
+
+PHP Version: 5.5.6
+CPU Brand String: Intel(R) Core(TM) i5-2400S CPU @ 2.50GHz
+

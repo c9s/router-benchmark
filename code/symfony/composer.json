@@ -1,0 +1,7 @@
+{
+    "name": "whatever",
+    "require": {
+        "symfony/routing": "dev-master",
+        "symfony/http-foundation": "dev-master"
+    }
+}
