@@ -1,0 +1,43 @@
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking remote.dev (be patient)
+
+
+Server Software:        Apache/2.2.22
+Server Hostname:        remote.dev
+Server Port:            80
+
+Document Path:          /symfony-routing/
+Document Length:        0 bytes
+
+Concurrency Level:      50
+Time taken for tests:   0.616 seconds
+Complete requests:      3000
+Failed requests:        0
+Write errors:           0
+Total transferred:      630000 bytes
+HTML transferred:       0 bytes
+Requests per second:    4873.17 [#/sec] (mean)
+Time per request:       10.260 [ms] (mean)
+Time per request:       0.205 [ms] (mean, across all concurrent requests)
+Transfer rate:          999.38 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.2      0       2
+Processing:     6   10   2.2     10      23
+Waiting:        6   10   2.2     10      23
+Total:          6   10   2.2     10      24
+
+Percentage of the requests served within a certain time (ms)
+  50%     10
+  66%     11
+  75%     11
+  80%     11
+  90%     12
+  95%     14
+  98%     17
+  99%     19
+ 100%     24 (longest request)
