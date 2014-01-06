@@ -1,4 +1,4 @@
-<?php return Phux\Mux::__set_state(array(
+<?php return pux\Mux::__set_state(array(
    'id' => NULL,
    'routes' => 
   array (

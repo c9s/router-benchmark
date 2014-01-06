@@ -39,7 +39,7 @@ Apache prefork
 
 <img src="https://raw.github.com/c9s/router-benchmark/master/ab/ab_symfony.png"/>
 
-### Phux
+### pux
 
 <img src="https://raw.github.com/c9s/router-benchmark/master/ab/ab_phux_ext.png"/>
 
