@@ -46,4 +46,6 @@ Apache prefork
 
 ## Requests per second
 
+<img src="https://raw.github.com/c9s/router-benchmark/master/ab/reqs_per_second.png"/>
+
 http://c9s.github.io/router-benchmark/
