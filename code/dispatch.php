@@ -22,6 +22,10 @@ use pux\Mux;
 $bench = new SimpleBench;
 $bench->setN( 10000 );
 
+$bench->iterate( 'pux extension' , function() {
+    $mux = require 'pux/hello_mux.php';
+    $route = $mux->dispatch('/hello');
+});
 $bench->iterate( 'symfony/routing' , function() {
     $routes = new RouteCollection();
     $routes->add('hello', new Route('/hello', array('controller' => 'foo', 'action' => 'bar' )));
@@ -32,9 +36,23 @@ $bench->iterate( 'symfony/routing' , function() {
     $route = $matcher->match('/hello');
 });
 
-$bench->iterate( 'pux extension' , function() {
-    $mux = require 'pux/hello_mux.php';
+
+$mux = require 'pux/hello_mux.php';
+$bench->iterate( 'pux extension (dispatch)' , function() use ($mux) {
     $route = $mux->dispatch('/hello');
 });
+
+$routes = new RouteCollection();
+$routes->add('hello', new Route('/hello', array('controller' => 'foo', 'action' => 'bar' )));
+
+$bench->iterate( 'symfony/routing (dispatch)' , function() use ($routes) {
+    $context = new RequestContext();
+    // this is optional and can be done without a Request instance
+    $context->fromRequest(Request::createFromGlobals());
+    $matcher = new UrlMatcher($routes, $context);
+    $route = $matcher->match('/hello');
+});
+
+
 $result = $bench->compare();
 echo $result->output('console');
