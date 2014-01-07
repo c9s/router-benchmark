@@ -22,16 +22,13 @@ use pux\Mux;
 $bench = new SimpleBench;
 $bench->setN( 10000 );
 
-
-$mux = require 'pux/hello_mux.php';
-$bench->iterate( 'pux extension (dispatch)' , function() use ($mux) {
+$bench->iterate( 'pux extension' , function() {
+    $mux = require 'pux/hello_mux.php';
     $route = $mux->dispatch('/hello');
 });
-
-$routes = new RouteCollection();
-$routes->add('hello', new Route('/hello', array('controller' => 'foo', 'action' => 'bar' )));
-
-$bench->iterate( 'symfony/routing (dispatch)' , function() use ($routes) {
+$bench->iterate( 'symfony/routing' , function() {
+    $routes = new RouteCollection();
+    $routes->add('hello', new Route('/hello', array('controller' => 'foo', 'action' => 'bar' )));
     $context = new RequestContext();
     // this is optional and can be done without a Request instance
     $context->fromRequest(Request::createFromGlobals());

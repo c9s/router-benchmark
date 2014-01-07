@@ -17,26 +17,26 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
-use pux\Mux;
+use Pux\Mux;
 
 $bench = new SimpleBench;
-$bench->setN( 10000 );
+$bench->setN(5000);
 
-
-$mux = require 'pux/hello_mux.php';
+$mux = new Mux;
+$mux->add('/product/:id', [ 'ProductController' , 'index' ]);
 $bench->iterate( 'pux extension (dispatch)' , function() use ($mux) {
-    $route = $mux->dispatch('/hello');
+    $route = $mux->dispatch('/product/23');
 });
 
 $routes = new RouteCollection();
-$routes->add('hello', new Route('/hello', array('controller' => 'foo', 'action' => 'bar' )));
+$routes->add('product', new Route('/product/{id}', array('controller' => 'foo', 'action' => 'bar' )));
 
 $bench->iterate( 'symfony/routing (dispatch)' , function() use ($routes) {
     $context = new RequestContext();
     // this is optional and can be done without a Request instance
     $context->fromRequest(Request::createFromGlobals());
     $matcher = new UrlMatcher($routes, $context);
-    $route = $matcher->match('/hello');
+    $route = $matcher->match('/product/23');
 });
 
 
