@@ -1,15 +1,15 @@
 n=10000
 Runing symfony/routing - . 6664.4093423989/s
-Runing phux extension - . 16501.898328291/s
+Runing pux extension - . 16501.898328291/s
 
-                   Rate   Mem phux extension symfony/routing
- phux extension   16K/s    5M             --            -40%
+                   Rate   Mem pux extension symfony/routing
+ pux extension   16K/s    5M             --            -40%
 symfony/routing    6K/s  786K           247%              --
 
 
 ================================== Bar Chart ==================================
 
-   phux extension   16K/s | ████████████████████████████████████████████████████████████  |
+   pux extension   16K/s | ████████████████████████████████████████████████████████████  |
   symfony/routing    6K/s | ████████████████████████                                      |
 
 

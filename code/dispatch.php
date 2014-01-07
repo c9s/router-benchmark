@@ -32,8 +32,8 @@ $bench->iterate( 'symfony/routing' , function() {
     $route = $matcher->match('/hello');
 });
 
-$bench->iterate( 'phux extension' , function() {
-    $mux = require 'phux/hello_mux.php';
+$bench->iterate( 'pux extension' , function() {
+    $mux = require 'pux/hello_mux.php';
     $route = $mux->dispatch('/hello');
 });
 $result = $bench->compare();

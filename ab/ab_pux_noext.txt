@@ -9,7 +9,7 @@ Server Software:        Apache/2.2.22
 Server Hostname:        remote.dev
 Server Port:            80
 
-Document Path:          /phux/eg/hello.php
+Document Path:          /pux/eg/hello.php
 Document Length:        0 bytes
 
 Concurrency Level:      50
