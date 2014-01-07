@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
-use Phux\Mux;
+use pux\Mux;
 
 $bench = new SimpleBench;
 $bench->setN( 10000 );
