@@ -41,7 +41,7 @@ Apache prefork
 
 ### pux
 
-<img src="https://raw.github.com/c9s/router-benchmark/master/ab/ab_phux_ext.png"/>
+<img src="https://raw.github.com/c9s/router-benchmark/master/ab/ab_pux_ext.png"/>
 
 
 ## Requests per second
