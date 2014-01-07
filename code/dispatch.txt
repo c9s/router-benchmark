@@ -1,22 +1,22 @@
 n=10000
-Runing pux extension - . 15846.051317235/s
-Runing symfony/routing - . 6502.0559672657/s
-Runing pux extension (dispatch) - . 521238.75329323/s
-Runing symfony/routing (dispatch) - . 7928.4352739516/s
+Runing pux extension - . 15915.457631106/s
+Runing symfony/routing - . 6687.8544991616/s
+Runing pux extension (dispatch) - . 536946.51406918/s
+Runing symfony/routing (dispatch) - . 8163.8522492663/s
 
-                              Rate   Mem pux extension (dispatch) pux extension symfony/routing (dispatch) symfony/routing
-  pux extension (dispatch)  521K/s  524K                       --           -3%                        -1%             -1%
-             pux extension   15K/s    3M                    3289%            --                       -50%            -41%
-symfony/routing (dispatch)    7K/s    0B                    6574%          199%                         --            -82%
-           symfony/routing    6K/s  786K                    8016%          243%                       121%              --
+                                Rate   Mem pux extension (dispatch) pux extension symfony/routing (dispatch) symfony/routing
+  pux extension (dispatch) 536.95K/s  524K                       --           -2%                        -1%             -1%
+             pux extension  15.92K/s    3M                    3373%            --                       -51%            -42%
+symfony/routing (dispatch)   8.16K/s    0B                    6577%          194%                         --            -81%
+           symfony/routing   6.69K/s  786K                    8028%          237%                       122%              --
 
 
 ================================== Bar Chart ==================================
 
-    pux extension (dispatch)  521K/s | ████████████████████████████████████████████████████████████  |
-               pux extension   15K/s | █                                                             |
-  symfony/routing (dispatch)    7K/s |                                                               |
-             symfony/routing    6K/s |                                                               |
+    pux extension (dispatch) 536.95K/s | ████████████████████████████████████████████████████████████  |
+               pux extension  15.92K/s | █                                                             |
+  symfony/routing (dispatch)   8.16K/s |                                                               |
+             symfony/routing   6.69K/s |                                                               |
 
 
 ============================== System Information ==============================
