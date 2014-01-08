@@ -12,6 +12,7 @@ require 'SimpleBench.php';
 
 // requirement from symfon
 require 'symfony/vendor/autoload.php';
+require 'pux/PatternCompiler.php';
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
@@ -24,6 +25,7 @@ $bench->setN(5000);
 
 $mux = new Mux;
 $mux->add('/product/:id', [ 'ProductController' , 'index' ]);
+
 $bench->iterate( 'pux extension (dispatch)' , function() use ($mux) {
     $route = $mux->dispatch('/product/23');
 });
