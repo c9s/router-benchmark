@@ -1,0 +1,6 @@
+[submodule "code/ham/ham"]
+	path = code/ham/ham
+	url = https://github.com/radiosilence/Ham.git
+[submodule "code/aura/aura"]
+	path = code/aura/aura
+	url = https://github.com/auraphp/Aura.Router.git

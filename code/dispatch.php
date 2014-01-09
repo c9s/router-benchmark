@@ -13,6 +13,9 @@ require 'SimpleBench.php';
 // requirement from symfon
 require 'symfony/vendor/autoload.php';
 require 'pux/PatternCompiler.php';
+require 'klein/vendor/autoload.php';
+require 'ham/ham/ham/ham.php';
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
@@ -25,14 +28,47 @@ $bench->setN( 10000 );
 
 
 $mux = require 'pux/hello_mux.php';
-$bench->iterate( 'pux extension (dispatch)' , function() use ($mux) {
+$bench->iterate( 'pux extension' , function() use ($mux) {
     $route = $mux->dispatch('/hello');
 });
+
+
+
+// klein
+$klein = new \Klein\Klein();
+$klein->respond('GET', '/hello', function () {
+    return 'hello';
+});
+
+$bench->iterate( 'klein' , function() use ($klein) {
+    $klein->dispatch();
+});
+
+
+
+// ham
+$_SERVER['REQUEST_URI'] = '/hello';
+$ham = new Ham('example');
+$ham->route('/hello', function($ham) {
+});
+$bench->iterate( 'ham' , function() use ($ham) {
+    $ham->run();
+});
+
+
+// aura
+$aura = require 'aura/aura/scripts/instance.php';
+$aura->add('hello', '/hello');
+$bench->iterate( 'aura' , function() use ($aura) {
+    $route = $aura->match('/hello', $_SERVER);
+});
+
+// Symfony
 
 $routes = new RouteCollection();
 $routes->add('hello', new Route('/hello', array('controller' => 'foo', 'action' => 'bar' )));
 
-$bench->iterate( 'symfony/routing (dispatch)' , function() use ($routes) {
+$bench->iterate( 'symfony/routing' , function() use ($routes) {
     $context = new RequestContext();
     // this is optional and can be done without a Request instance
     $context->fromRequest(Request::createFromGlobals());
