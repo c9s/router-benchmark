@@ -12,6 +12,7 @@ require 'SimpleBench.php';
 
 // requirement from symfon
 require 'symfony/vendor/autoload.php';
+require 'pux/PatternCompiler.php';
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;

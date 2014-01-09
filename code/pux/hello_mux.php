@@ -1,4 +1,4 @@
-<?php return pux\Mux::__set_state(array(
+<?php return Pux\Mux::__set_state(array(
    'id' => NULL,
    'routes' => 
   array (
@@ -16,7 +16,7 @@
       ),
     ),
   ),
-   'subMux' => 
+   'submux' => 
   array (
   ),
    'expandSubMux' => true,
