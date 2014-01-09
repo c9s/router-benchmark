@@ -1,26 +1,30 @@
 n=10000
-Runing pux extension - . 15915.457631106/s
-Runing symfony/routing - . 6687.8544991616/s
-Runing pux extension (dispatch) - . 536946.51406918/s
-Runing symfony/routing (dispatch) - . 8163.8522492663/s
+Runing pux extension - . 100862.19625101/s
+Runing klein - . 1882.724378535/s
+Runing ham - . 16594.562964364/s
+Runing aura - . 39738.054814455/s
+Runing symfony/routing - . 2088.8575643833/s
 
-                                Rate   Mem pux extension (dispatch) pux extension symfony/routing (dispatch) symfony/routing
-  pux extension (dispatch) 536.95K/s  524K                       --           -2%                        -1%             -1%
-             pux extension  15.92K/s    3M                    3373%            --                       -51%            -42%
-symfony/routing (dispatch)   8.16K/s    0B                    6577%          194%                         --            -81%
-           symfony/routing   6.69K/s  786K                    8028%          237%                       122%              --
+                     Rate   Mem pux extension aura ham symfony/routing klein
+  pux extension 100.86K/s    0B            -- -39%-16%             -2%   -1%
+           aura  39.74K/s    0B          253%   ---41%             -5%   -4%
+            ham  16.59K/s    0B          607% 239%  --            -12%  -11%
+symfony/routing   2.09K/s  524K         4828%1902%794%              --  -90%
+          klein   1.88K/s  262K         5357%2110%881%            110%    --
 
 
 ================================== Bar Chart ==================================
 
-    pux extension (dispatch) 536.95K/s | ████████████████████████████████████████████████████████████  |
-               pux extension  15.92K/s | █                                                             |
-  symfony/routing (dispatch)   8.16K/s |                                                               |
-             symfony/routing   6.69K/s |                                                               |
+    pux extension 100.86K/s | ████████████████████████████████████████████████████████████  |
+             aura  39.74K/s | ███████████████████████                                       |
+              ham  16.59K/s | █████████                                                     |
+  symfony/routing   2.09K/s | █                                                             |
+            klein   1.88K/s | █                                                             |
 
 
 ============================== System Information ==============================
 
 PHP Version: 5.5.6
-CPU Brand String: Intel(R) Core(TM) i5-2400S CPU @ 2.50GHz
+CPU Brand String: Intel(R) Core(TM) i5-3427U CPU @ 1.80GHz
 
+With XDebug Extension.
