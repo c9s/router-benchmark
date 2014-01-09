@@ -47,7 +47,7 @@ $bench->iterate( 'php array' , function() use ($phparray) {
 
 
 $mux = require 'pux/hello_mux.php';
-$bench->iterate( 'pux extension' , function() use ($mux) {
+$bench->iterate( 'pux' , function() use ($mux) {
     $route = $mux->match('/hello');
 });
 
