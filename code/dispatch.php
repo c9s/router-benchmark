@@ -93,7 +93,6 @@ $routes->add('hello', new Route('/hello', array('controller' => 'foo', 'action' 
 
 $bench->iterate( 'symfony/routing' , function() use ($routes) {
     $context = new RequestContext();
-    // this is optional and can be done without a Request instance
     $context->fromRequest(Request::createFromGlobals());
     $matcher = new UrlMatcher($routes, $context);
     $route = $matcher->match('/hello');
