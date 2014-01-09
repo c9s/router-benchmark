@@ -26,11 +26,34 @@ use pux\Mux;
 $bench = new SimpleBench;
 $bench->setN( 10000 );
 
+// plain php dispatch function
+$phparray = array( 
+    '/hello' => array( 'hello' )
+);
+function phparray_dispatch($path) {
+    global $phparray;
+    if ( isset($phparray[$path]) ) {
+        return $phparray[$path];
+    }
+    foreach( $phparray as $pattern => $route ) {
+        if ( preg_match('#' . $pattern . '#', $path) ) {
+            return $route;
+        }
+    }
+}
+$bench->iterate( 'php array' , function() use ($phparray) {
+    $route = phparray_dispatch('/hello');
+});
+
 
 $mux = require 'pux/hello_mux.php';
 $bench->iterate( 'pux extension' , function() use ($mux) {
-    $route = $mux->dispatch('/hello');
+    $route = $mux->match('/hello');
 });
+
+
+
+
 
 
 
