@@ -1,0 +1,32 @@
+php dispatch.php
+n=10000
+Runing php array - . 58366.171782266/s
+Runing pux - . 34159.074953945/s
+Runing klein - . 741.86689636814/s
+Runing ham - . 10384.390179169/s
+Runing aura - . 21274.46843045/s
+Runing symfony/routing - . 900.48034589679/s
+
+                     Rate   Mem php array pux aura ham symfony/routing klein
+      php array  58.37K/s    0B        ---58% -36%-17%             -1%   -1%
+            pux  34.16K/s    0B      170%  -- -62%-30%             -2%   -2%
+           aura  21.27K/s    0B      274%160%   ---48%             -4%   -3%
+            ham  10.38K/s    0B      562%328% 204%  --             -8%   -7%
+symfony/routing  900.48/s  786K     6481%3793%2362%1153%              --  -82%
+          klein  741.87/s  262K     7867%4604%2867%1399%            121%    --
+
+
+================================== Bar Chart ==================================
+
+        php array  58.37K/s | ████████████████████████████████████████████████████████████  |
+              pux  34.16K/s | ███████████████████████████████████                           |
+             aura  21.27K/s | █████████████████████                                         |
+              ham  10.38K/s | ██████████                                                    |
+  symfony/routing  900.48/s |                                                               |
+            klein  741.87/s |                                                               |
+
+
+============================== System Information ==============================
+
+PHP Version: 5.5.6
+CPU Brand String: Intel(R) Core(TM) i5-3427U CPU @ 1.80GHz

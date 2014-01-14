@@ -12,7 +12,7 @@ require 'SimpleBench.php';
 
 // requirement from symfon
 require 'symfony/vendor/autoload.php';
-require 'pux/PatternCompiler.php';
+require 'pux/pux/vendor/autoload.php';
 require 'klein/vendor/autoload.php';
 require 'ham/ham/ham/ham.php';
 
@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
-use pux\Mux;
+use Pux\Mux;
 
 $bench = new SimpleBench;
 $bench->setN( 10000 );

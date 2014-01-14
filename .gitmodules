@@ -4,3 +4,6 @@
 [submodule "code/aura/aura"]
 	path = code/aura/aura
 	url = https://github.com/auraphp/Aura.Router.git
+[submodule "code/pux/pux"]
+	path = code/pux/pux
+	url = git@github.com:c9s/Pux
