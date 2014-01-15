@@ -4,8 +4,10 @@
   array (
     0 => 
     array (
-      0 => false,
-      1 => '/hello',
+      0 => true,
+      1 => '#^    /hello
+    /(?P<name>[^/]+?)
+$#xs',
       2 => 
       array (
         0 => 'HelloController',
@@ -13,6 +15,13 @@
       ),
       3 => 
       array (
+        'regex' => '    /hello
+    /(?P<name>[^/]+?)
+',
+        'compiled' => '#^    /hello
+    /(?P<name>[^/]+?)
+$#xs',
+        'pattern' => '/hello/:name',
       ),
     ),
   ),
