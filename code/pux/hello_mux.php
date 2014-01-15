@@ -11,21 +11,19 @@
         0 => 'HelloController',
         1 => 'helloAction',
       ),
-      3 => array (),
+      3 => 
+      array (
+      ),
     ),
   ),
-   'submux' => array(),
-   'staticRoutes' => array(
-       '/hello' => array (
-            0 => false,
-            1 => '/hello',
-            2 => 
-            array (
-                0 => 'HelloController',
-                1 => 'helloAction',
-            ),
-            3 => array (),
-            ),
-   ),
+   'routesById' => 
+  array (
+  ),
+   'staticRoutes' => 
+  array (
+  ),
+   'submux' => 
+  array (
+  ),
    'expand' => true,
 )); /* version */
